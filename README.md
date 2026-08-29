@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 🚀KonsultanPro — Professional Services Landing Page Template
 
-## Getting Started
+Template landing page modern untuk jasa profesional (konsultan bisnis, hukum, desain, dll) dibangun dengan Next.js 15 (App Router) + TypeScript + Tailwind CSS v4.
 
-First, run the development server:
+A modern landing page template for professional services (business consulting, legal, design, etc.), built with Next.js 15 (App Router), TypeScript, and Tailwind CSS v4.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 1. Key Features
+
+• Hero, Services, About, Testimonials, Contact — all on a single page
+• Dark/Light mode (next-themes, persisted in localStorage, system default)
+• Lightweight on-scroll animations using Framer Motion
+• Contact form with validation (react-hook-form + zod) + API Route + email via Resend
+• SEO-ready — metadata, Open Graph, Twitter Card, sitemap.xml, robots.txt
+• Fully responsive (mobile-first)
+• Basic accessibility (ARIA labels, semantic HTML, focus visible)
+• Easy to re-skin — colors & branding via CSS variables in globals.css
+• Modular components — ready for reuse in other projects
+
+## 2. Tech Stack
+
+| Technology                   | Tools                        |
+| ---------------------------- | ---------------------------- |
+| Framework                    | Next.js (App Router)         |
+| Languange                    | TypeScript (strict)          |
+| Server state / data fetching | TanStack Query (React Query) |
+| HTTP client                  | Axios                        |
+| Client / UI state            | Zustand                      |
+| Form                         | React Hook Form              |
+| Validasi schema              | Zod                          |
+| Komponen UI                  | shadcn/ui                    |
+| Styling                      | Tailwind CSS                 |
+
+## 3. Structure
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+├── app/
+│ ├── api/contact/route.ts # Backend form kontak
+│ ├── globals.css # Theme variables (reskin di sini)
+│ ├── layout.tsx # Root layout + SEO metadata
+│ ├── page.tsx # Single-page landing
+│ ├── robots.ts
+│ └── sitemap.ts
+├── components/
+│ ├── ui/ # Button, Card, Input, Label, Textarea, Avatar
+│ ├── Navbar.tsx
+│ ├── Hero.tsx
+│ ├── Services.tsx
+│ ├── About.tsx
+│ ├── Testimonials.tsx
+│ ├── Contact.tsx
+│ ├── ContactForm.tsx
+│ ├── Footer.tsx
+│ ├── SectionWrapper.tsx # Animasi scroll
+│ ├── ThemeProvider.tsx
+│ └── ThemeToggle.tsx
+├── lib/utils.ts # cn() helper
+├── .env.example
+└── README.md
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+How to Install and Run
 
-## Learn More
+1. Install dependencies :
+   npm install
 
-To learn more about Next.js, take a look at the following resources:
+2. Setup environment variables :
+   cp .env.example .env.local
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Run development server :
+   npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open http://localhost:3000.
 
-## Deploy on Vercel
+4. Build production :
+   npm run build
+   npm start
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 4. Aksesibilitas & SEO Checklist
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[x] Semantic HTML (header, main, section, footer, nav)
+[x] Heading hierarchy (h1 → h2 → h3)
+[x] ARIA labels pada form, tombol, slider
+[x] Focus visible (keyboard navigation)
+[x] Contrast warna (WCAG-friendly via theme)
+[x] Metadata + Open Graph + Twitter Card
+[x] sitemap.xml & robots.txt
+[x] lang="id"
+
+Created with ❤️ using Next.js + Tailwind CSS.
